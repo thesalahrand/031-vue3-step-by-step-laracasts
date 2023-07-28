@@ -15,19 +15,12 @@
       <app-button>Click Me</app-button>
     </div>
 
-    <script>
+    <script type="module">
+      import AppButton from './js/components/AppButton.js'
+
       const app = {
         components: {
-          'app-button': {
-            template: `<button class="bg-purple-600 hover:bg-purple-800 px-5 py-2.5 text-white rounded mx-2 disabled:cursor-not-allowed" disabled="processing ? true : false">
-              <slot/>
-            </button>`,
-            data() {
-              return {
-                processing: true,
-              }
-            },
-          },
+          'app-button': AppButton,
         },
       }
 
