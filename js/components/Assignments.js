@@ -14,10 +14,10 @@ export default {
   data() {
     return {
       assignments: [
-        { id: 1, name: 'Assignment 01', complete: false },
-        { id: 2, name: 'Assignment 02', complete: false },
-        { id: 3, name: 'Assignment 03', complete: false },
-        { id: 4, name: 'Assignment 04', complete: false },
+        { id: 1, name: 'Assignment 01', complete: false, tag: 'math' },
+        { id: 2, name: 'Assignment 02', complete: false, tag: 'physics' },
+        { id: 3, name: 'Assignment 03', complete: false, tag: 'biology' },
+        { id: 4, name: 'Assignment 04', complete: false, tag: 'math' },
       ],
     }
   },
@@ -37,6 +37,7 @@ export default {
         id: this.assignments.length + 1,
         name: newAssignment,
         complete: false,
+        tag: 'physics',
       })
     },
   },
