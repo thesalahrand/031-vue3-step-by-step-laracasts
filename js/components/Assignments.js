@@ -37,7 +37,7 @@ export default {
         id: this.assignments.length + 1,
         name: newAssignment,
         complete: false,
-        tag: 'physics',
+        tag: 'math',
       })
     },
   },
