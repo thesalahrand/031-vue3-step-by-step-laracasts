@@ -1,12 +1,14 @@
 import AssignmentItem from './AssignmentItem.js'
 import AssignmentTags from './AssignmentTags.js'
+import Panel from './Panel.js'
 
 export default {
   components: {
     AssignmentItem,
     AssignmentTags,
+    Panel,
   },
-  template: `<section v-if="assignments.length">
+  template: `<panel v-if="assignments.length">
     <div class="flex justify-between items-start">
       <h2 class="font-bold mb-2">{{ title }} ({{ assignments.length }})</h2>
       <button v-if="canToggle" @click="$emit('toggle')">&times;</button>
@@ -19,7 +21,10 @@ export default {
       <assignment-item v-for="assignment in filteredAssignments" :key="assignment.id" :assignment="assignment"></assignment-item>
     </ul>
     <slot></slot>
-  </section>`,
+    <template v-slot:footer>
+      This is just a test footer...
+    </template>
+  </panel>`,
   props: {
     title: String,
     assignments: Array,
