@@ -1,9 +1,15 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import { ref, onMounted } from 'vue'
+const message = ref('Hello World!')
+
+onMounted(() => {
+  message.value = 'Bye world!'
+})
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <input type="text" v-model="message" />
+    {{ message }}
   </main>
 </template>
