@@ -7,7 +7,10 @@ export default {
     AssignmentTags,
   },
   template: `<section v-if="assignments.length">
-    <h2 class="font-bold mb-2">{{ title }} ({{ assignments.length }})</h2>
+    <div class="flex justify-between items-start">
+      <h2 class="font-bold mb-2">{{ title }} ({{ assignments.length }})</h2>
+      <button v-if="canToggle" @click="$emit('toggle')">&times;</button>
+    </div>
     <assignment-tags 
       v-model:currTag="currTag"
       :initial-tags="this.assignments.map((assignment) => assignment.tag)"
@@ -15,10 +18,12 @@ export default {
     <ul class="border border-gray-600 divide-y divide-gray-600 mt-6">
       <assignment-item v-for="assignment in filteredAssignments" :key="assignment.id" :assignment="assignment"></assignment-item>
     </ul>
+    <slot></slot>
   </section>`,
   props: {
     title: String,
     assignments: Array,
+    canToggle: { type: Boolean, default: false },
   },
   data() {
     return {

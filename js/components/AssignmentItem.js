@@ -1,5 +1,5 @@
 export default {
-  template: `<li class="p-2">
+  template: `<li class="p-2 w-60">
     <label for="" class="flex justify-between items-center">
       {{ assignment.name }}
       <input type="checkbox" v-model="assignment.complete" class="ml-2" />
