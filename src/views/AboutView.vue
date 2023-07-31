@@ -1,6 +1,12 @@
+<script setup>
+import { useFlash } from '@/composables/useFlash'
+
+const { flash } = useFlash()
+</script>
+
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <button @click="flash('Here\'s the title!', '...and here\'s the text!')">Click Me</button>
   </div>
 </template>
 
