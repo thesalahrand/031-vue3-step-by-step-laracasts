@@ -1,15 +1,19 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-const message = ref('Hello World!')
+import { useStorage } from '@/composables/useStorage'
 
-onMounted(() => {
-  message.value = 'Bye world!'
-})
+const food = useStorage('food', 'salad')
+const age = useStorage('age')
 </script>
 
 <template>
   <main>
-    <input type="text" v-model="message" />
-    {{ message }}
+    <p>
+      What's your favorite food?
+      <input type="text" v-model="food" />
+    </p>
+    <p>
+      What's your age?
+      <input type="text" v-model="age" />
+    </p>
   </main>
 </template>
